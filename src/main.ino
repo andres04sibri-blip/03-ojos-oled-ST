@@ -198,10 +198,10 @@ void setup() {
     while (true) delay(100);
   }
 
-
+  // CHECK 1.1: Invoca la función obligatoria de auto-diagnóstico (Power-On Self-Test):
   runSystemPOST(display);
 
-
+  // Menú de ayuda por Serial Monitor
   Serial.println(F("\n======================================================="));
   Serial.println(F("🤖 SISTEMA EMBEBIDO ESP32 — TELEMETRÍA Y CONTROL DE OJOS"));
   Serial.println(F("======================================================="));
@@ -217,6 +217,7 @@ void setup() {
   Serial.println(F("  '0' o 'M' -> Alternar Modo Autónomo (FSM millis)"));
   Serial.println(F("=======================================================\n"));
 
+  // CHECK 1.2: Dibuja la expresión neutra base para arrancar (eye_normal):
   drawEyeExpression(display, eye_normal);
 
   previousMillis = millis();
